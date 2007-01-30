@@ -1,0 +1,189 @@
+NOTICE
+chan
+dev
+dis
+	bind.dis
+	broke.dis
+	cat.dis
+	cd.dis
+	chmod.dis
+	cmp.dis
+	cp.dis
+	date.dis
+	dd.dis
+	echo.dis
+	env.dis
+	export.dis
+	ftest.dis
+	getauthinfo.dis
+	grep.dis
+	kill.dis
+	lc.dis
+	lib
+		arg.dis
+		attrdb.dis
+		auth.dis
+		bufio.dis
+		cfg.dis
+		convcs
+			*
+		daytime.dis
+		debug.dis
+		dialog.dis
+		dis.dis
+		env.dis
+		filepat.dis
+		ip.dis
+		ipsrv.dis
+		kvlib.dis
+		login.dis
+		lock.dis
+		memfs.dis
+		newns.dis
+		plumbmsg.dis
+		rand.dis
+		random.dis
+		readdir.dis
+		regex.dis
+		selectfile.dis
+		ssl.dis
+		string.dis
+		styx.dis
+		styxlib.dis
+		titlebar.dis
+		tkclient.dis
+		winplace.dis
+		wmclient.dis
+		wmlib.dis
+		wmsrv.dis
+		workdir.dis
+		translate.dis
+	ls.dis
+	memfs.dis
+	mkdir.dis
+	mount.dis
+	mv.dis
+	netstat.dis
+	ndb
+		cs.dis
+		dns.dis
+	pi	-	-	-	pi
+		wm.dis	-	-	-	/usr/internet/pi/wm.dis
+		wmlib.dis	-	-	-	/usr/internet/pi/wmlib.dis
+		text.dis	-	-	-	/usr/internet/pi/text.dis
+	plumb.dis
+	ps.dis
+	ramfile.dis
+	rcmd.dis
+	read.dis
+	rm.dis
+	sh
+		arg.dis
+		std.dis
+		expr.dis
+		file2chan.dis
+		regex.dis
+		sh.dis
+		string.dis
+		tk.dis
+	sh.dis
+	sleep.dis
+	sort.dis
+	stack.dis
+	tail.dis
+	uniq.dis
+	unmount.dis
+	wc.dis
+	wm
+		about.dis
+		edit.dis
+		filename.dis
+		sh.dis
+		toolbar.dis
+		wm.dis
+	xd.dis
+
+env
+fonts
+	lucida
+		# lucidasans/unicode.8.font subfont files
+		EuroLatin.7.0
+		Phonetic.7.0
+		GenDiacrit.7.0
+		cyrillic.7.0
+		Hebrew.7.0
+		GenPunct.7.0
+		Letterlike.7.0
+		MathOps1.7.0
+		control.7.0
+		Altshades.7.0
+		FormBlock.7.0
+		Althebrew.7.0
+		# lucidasans/unicode.7.font subfont files
+		EuroLatin.6.0
+		Phonetic.6.0
+		GenDiacrit.6.0
+		cyrillic.6.0
+		Hebrew.6.0
+		GenPunct.6.0
+		Letterlike.6.0
+		MathOps1.6.0
+		control.6.0
+		Altshades.6.0
+		FormBlock.6.0
+		Althebrew.6.0
+	lucidasans
+		NOTICE
+		unicode.8.font
+		lsr.14
+		unicode.7.font
+		lsr.12
+	lucm
+		# pelm/unicode.8.font subfont files
+		ipa.9
+		greek.9
+	misc
+		# pelm/unicode.8.font subfont files
+		cyrillic.9
+		genpunc.9
+		latin1.6x13
+		latin1.6x13.font
+		letterlike.8
+		numbforms.9
+		arrows
+		math1
+		math2
+		tech
+		chart
+		geometric
+		ding
+		zapf
+	pelm
+		NOTICE
+		unicode.8.font	-	-	-	/usr/internet/pelm_unicode.8.font
+		latin1.8
+		latineur.8
+		supsub.9
+		currency.9
+		latin1.9
+		fffd.9
+icons
+	inferno.bit
+	tk
+		*
+lib
+	convcs
+		*
+	wmsetup
+n
+	client
+	ftp
+	kfs
+	local
+	remote
+net
+prog
+services
+tmp
+usr
+	internet

@@ -1,0 +1,9 @@
+#!/dis/sh.dis
+archfs plugin.archfs
+du -a /mnt | grep '\.dis$' | sed 's:^.*/mnt::' > /tmp/disfiles
+{for i in `{cat /tmp/disfiles} {
+	echo $i
+	disdep /mnt$i
+}} | sort | uniq > /tmp/disdep
+cat /tmp/disfiles /tmp/disdep | sort | uniq -u
+unmount /mnt

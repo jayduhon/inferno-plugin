@@ -1,0 +1,17 @@
+#!/dis/sh.dis
+load std
+pctl forkns
+if {! ftest -e /cmd} {
+	bind -a '#C' /
+}
+
+cd install_files
+rm *
+disk/mkfs -a -s / ../install.proto | disk/mkext -d .
+#flag x +
+#os (	'C:/cabsdk/bin/cabarc'
+#	-P 'C:\users\inferno\usr\internet\install_files'
+#	 N
+#	'C:\users\inferno\usr\internet\ieplugin.cab'
+#	'C:\users\inferno\usr\internet\install_files\'^`{ls}
+#)

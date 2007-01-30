@@ -1,0 +1,25 @@
+# Microsoft Developer Studio Generated Dependency File, included by emupi.mak
+
+.\emu.cpp : \
+	"..\..\users\inferno\include\keyboard.h"\
+	".\emu.h"\
+	".\inferno.h"\
+	".\main.h"\
+	
+
+.\factory.cpp : \
+	".\emu.h"\
+	".\factory.h"\
+	".\main.h"\
+	
+
+.\inferno.cpp : \
+	".\emu.h"\
+	".\inferno.h"\
+	".\main.h"\
+	
+
+.\main.cpp : \
+	".\factory.h"\
+	".\main.h"\
+	

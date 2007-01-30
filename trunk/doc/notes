@@ -1,0 +1,65 @@
+These are notes left behind by the original author (Chris Locke).
+I've added a few comments myself at the end.  -- forsyth
+
+
+SECURITY
+	Devices reveal host os user name (eve)
+	- have changed piemu eve to be "system"
+	We will have to be careful about this if we do plugins for Charon
+	as we won't be able to isolate the applet environment from the host
+	environment in the same way.
+
+devfs-Nt
+	Delays in starting up the plugin are because emuinit.dis
+	sets /dev/user to internet
+	on Nt devfs-Nt does a security check on setting the user id.
+	We need to think about what is needed for the plug-in
+	at the moment only read-only host fs access is required
+	namely for /dis/emuinit.dis and /plugin.kfs
+	everything else comes from the KFS fs.
+
+Network access
+	Could do same as Java and only allow connections back to the
+	server from whence we came.
+
+	Q. where did we come from?
+	- At the moment applet components can come from more than one server
+	- Could use the web page we are running in.
+		this enables someone elses  code to connect to your server
+		but you are in control of what goes on your server (in theory)
+		so you can use a third-party applet (e.g. from Vita Nuova) and have
+		it connect to your server.
+	- Only allow downloads of a single 'package' file which contains all the files
+	required for the applet to run.  Then only allow connections to the server from which
+	the 'package' was downloaded.
+	- If the applet package is signed then can open up network access according to
+	- a security policy
+
+Signing
+	Q. what do we sign?
+	- could sign individual dis modules / package files / namespaces
+	Q. how do we verify signatures?
+	- could use a trusted third party, basically a set of public keys of trusted
+	third parties (CAs).  Once we go down this route then management of the CA list,
+	importing new CA certificates etc. becomes an issue.  in practice, the `trusted' third party
+	knows next to nothing about either party
+	- we'll use SPKI
+
+Securing Dis
+	At the moment the VM can be subverted - can run arbitrary code or side-step the
+	sandbox set up by emuinit.dis.
+	This can be fixed by ensuring the type safety of dis run by the VM.
+	At what point should a dis verifier interject?
+	- at module load time.
+		every time a module was loaded it would be checked, unless already cached.
+		could decide not to verify on the basis of module signing.
+	- but alternatively ...
+
+Not Securing Dis, but securing something else (forsyth)
+	- papers about java byte code verification often include the word ``towards'' (eg, ``towards a formal
+	specification of byte code verification'').  they also tend to leave the hard bits for `further research',
+	although one of them noted that the actual verifiers they'd inspected disagreed with each other and
+	with the (then current) spec. from Sun.
+	- byte code verification is a hopeless technique, a form of proctology for programs.  a better
+	method is to transmit a high(er)-level program representation that's easy to check
+	and is converted to Dis (or something else) by the recipient, safely. trees for instance.

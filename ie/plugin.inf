@@ -1,0 +1,63 @@
+[Version]
+Signature="$CHICAGO$"
+AdvancedINF=2.0
+
+[DefaultInstall]
+CopyFiles=RootFiles, IEFiles, DisFiles
+AddReg=PluginReg
+
+[strings]
+CLSID = "{3A274C9A-1E70-435a-8A63-B91A93F3BDDD}"
+DESCRIPTION = "Inferno Plug-in from Vita Nuova"
+INSTALL_DIR = "Program Files\Vita Nuova\Inferno Plug-in\4th Edition"
+
+[DestinationDirs]
+RootFiles=30,"%INSTALL_DIR%"
+IEFiles=30,"%INSTALL_DIR%\ie"
+DisFiles=30,"%INSTALL_DIR%\dis"
+DisLibFiles=30,"%INSTALL_DIR%\dis\lib"
+
+[RootFiles]
+piemu=piemu.exe
+pluginarchfs=plugin.archfs
+
+[IEFiles]
+emupi=emupi.dll
+
+[DisFiles]
+emuinit=emuinit.dis
+
+[piemu]
+file-win32-x86=piemu.exe
+FileVersion=1,0,0,1
+
+[emupi]
+file-win32-x86=emupi.dll
+FileVersion=1,0,0,1
+
+[pluginarchfs]
+file=plugin.archfs
+FileVersion=1,0,0,1
+
+[emuinit]
+file=emuinit.dis
+FileVersion=1,0,0,1
+
+
+[PluginReg]
+; ActiveX registration
+HKCR,"CLSID\%CLSID%",,,"%DESCRIPTION%"
+HKCR,"CLSID\%CLSID%","AppID",,"%CLSID%"
+HKCR,"CLSID\%CLSID%\InprocServer32",,,"%30%\%INSTALL_DIR%\ie\emupi.dll"
+HKCR,"CLSID\%CLSID%\InprocServer32","ThreadingModel",,"Apartment"
+HKCR,"CLSID\%CLSID%\Control"
+; HKCR,"CLSID\%CLSID%\Implemented Categories\{7DD95802-9882-11CF-9FA9-00AA006C42C4}"
+HKCR,"CLSID\%CLSID%\Implemented Categories",,,""
+HKCR,"CLSID\%CLSID%\Implemented Categories\{7DD95802-9882-11CF-9FA9-00AA006C42C4}",,,""
+
+; Installation root for plugin
+; HKLM,"Software\Vita Nuova\Inferno 4th Edition\Plugin","rootpath",,"%30%\%INSTALL_DIR%"
+HKLM,"Software\Vita Nuova",,,""
+HKLM,"Software\Vita Nuova\Inferno 4th Edition",,,""
+HKLM,"Software\Vita Nuova\Inferno 4th Edition\Plugin",,,""
+HKLM,"Software\Vita Nuova\Inferno 4th Edition\Plugin","rootpath",,"%30%\%INSTALL_DIR%"

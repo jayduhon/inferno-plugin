@@ -1,0 +1,11 @@
+#!/dis/sh.dis
+load std
+archfs plugin.archfs
+dis=`{du -a /mnt | grep '\.dis$' | sed 's:^.*/mnt::'}
+for i in $dis {
+	dep=`{disdep /mnt$i}
+	for d in $dep {
+		if {~ $d $1} {echo $i}
+	}
+} | sort | uniq
+unmount /mnt

@@ -1,0 +1,4 @@
+LIBRARY		emupi.dll
+EXPORTS
+			DllGetClassObject	@2	PRIVATE
+			DllCanUnloadNow		@3	PRIVATE

@@ -1,0 +1,13 @@
+appl
+	in appl/pi, source of modified emuinit.b for plug-in environment, and
+	source of a few supporting programs it once invoked
+	probably appl/pi/wmlib.b is obsolete; if so, it will shortly be removed
+doc
+	just a few files with old notes
+fs
+	start of a directory to contain the prototype contents for the file system
+	used by Inferno in the plug-in environment
+ie
+	components for the Microsoft Internet Explorer plugin (particularly ie/src)
+legal
+	copy of GPLv2

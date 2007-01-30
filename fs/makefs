@@ -1,0 +1,12 @@
+#!/dis/sh.dis
+load std
+flag x +
+
+FSSIZE=1024	# kfs file size (Kb's)
+
+rm -f plugin.kfs
+zeros 1024 $FSSIZE > plugin.kfs
+unmount /n/kfs >[2]/dev/null
+mount -c {disk/kfs -rb 512 plugin.kfs} /n/kfs || exit $status
+disk/mkfs -U inferno -G inferno -a plugin.proto | disk/mkext -u -d /n/kfs
+unmount /n/kfs

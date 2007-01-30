@@ -1,0 +1,5 @@
+#!/dis/sh.dis
+load std
+flag x +
+
+install/create -o -p plugin.proto pluginfs > plugin.archfs

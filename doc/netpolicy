@@ -1,0 +1,45 @@
++ *.vitanuova.com
+- 127.0.0.*
+
+
+
+Allow list
+	domains / IPaddrs explicitly allowed
+
+Disallow list
+	domains / IPaddrs explicitly denied
+
+if connecting to a match on the disallow list then ALWAYS fail
+if connecting to a match of the allow list (after checking the disallow list) then connect silently
+o/w prompt
+
+Q's...
+	How to prompt safely?
+	How to set policy according to signature
+
+have signature sections
+
+
+"DEFAULT"
+	patterns
+
+"Internal"
+	signatures
+	patterns
+
+"External"
+	signatures
+	patterns
+
+How to know that code is internal?
+- could set a special key in the HTML that has to match a section in the policy file.
+	Dangerous, people will tend to call it TEST or some such guessable name.
+	Could ALWAYS call it TEST or LOCAL and include an entry in the policy
+	that causes the plugin to prompt before running such files.
+Plug-in could analyse the Source path of files and mark them as local before
+handing them over to emuinit.dis
+
+
+If we are using signing thn must use packages
+or sign modules and the resultant policy is the intersection of policy attributes
+amongst the components
